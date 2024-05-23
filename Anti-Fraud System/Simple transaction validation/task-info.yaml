@@ -12,6 +12,18 @@ files:
   - name: build.gradle
     visible: true
     learner_created: false
+  - name: src/antifraud/api/TransactionUiController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/dto/AmountUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/dto/ResultUiDto.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/18067#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 23 May 2024 14:11:04 UTC"
 record: -1
