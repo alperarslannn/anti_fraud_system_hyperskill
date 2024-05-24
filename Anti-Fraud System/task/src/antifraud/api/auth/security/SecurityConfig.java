@@ -83,6 +83,12 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PUT, "/api/auth/access/").hasRole(Role.ADMINISTRATOR.name())
                                 .requestMatchers(HttpMethod.PUT, "/api/auth/role").hasRole(Role.ADMINISTRATOR.name())
                                 .requestMatchers(HttpMethod.PUT, "/api/auth/role/").hasRole(Role.ADMINISTRATOR.name())
+                                .requestMatchers(HttpMethod.POST, "/api/antifraud/suspicious-ip").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.DELETE, "/api/antifraud/suspicious-ip/**").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.GET, "/api/antifraud/suspicious-ip").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.POST, "/api/antifraud/stolencard").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.DELETE, "/api/antifraud/stolencard/**").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.GET, "/api/antifraud/stolencard").hasRole(Role.SUPPORT.name())
                                 .anyRequest().authenticated()
                         // other matchers
                 )
