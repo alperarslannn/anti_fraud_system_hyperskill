@@ -12,6 +12,48 @@ files:
   - name: test/AntiFraudTest.java
     visible: false
     learner_created: false
+  - name: src/antifraud/api/dto/ResultUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/TransactionUiController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/dto/AmountUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/AuthUiController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/CustomUserDetails.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/SecurityConfig.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/UserAccount.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/UserAccountRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/CustomBCryptPasswordEncoder.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/RestAuthenticationEntryPoint.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/UserUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/UserResponseUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/StatusUserUiDto.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/18068#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 24 May 2024 11:54:35 UTC"
 record: -1

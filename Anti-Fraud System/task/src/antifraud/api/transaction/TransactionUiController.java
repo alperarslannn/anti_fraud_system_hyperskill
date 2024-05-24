@@ -1,4 +1,4 @@
-package antifraud.api;
+package antifraud.api.transaction;
 
 import antifraud.api.dto.AmountUiDto;
 import antifraud.api.dto.ResultUiDto;
