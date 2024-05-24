@@ -1,7 +1,7 @@
 package antifraud.api.transaction;
 
-import antifraud.api.dto.AmountUiDto;
-import antifraud.api.dto.ResultUiDto;
+import antifraud.api.transaction.dto.AmountUiDto;
+import antifraud.api.transaction.dto.ResultUiDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/api/antifraud/transaction")
 public class TransactionUiController {
 
-    @PostMapping
+    @PostMapping({"", "/"})
     public ResponseEntity<ResultUiDto> withDraw(@RequestBody AmountUiDto amountUiDto){
         if (amountUiDto.getAmount() == null || amountUiDto.getAmount() <= 0){return ResponseEntity.badRequest().build();}
 

@@ -11,5 +11,6 @@ public interface UserAccountRepository extends CrudRepository<UserAccount, Long>
     Optional<UserAccount> findById(Long id);
     Iterable<UserAccount> findAllByOrderByIdAsc();
     Optional<UserAccount> findByUsernameEqualsIgnoreCase(String email);
+    Optional<UserAccount> findFirstByLocked(boolean locked);
 
 }

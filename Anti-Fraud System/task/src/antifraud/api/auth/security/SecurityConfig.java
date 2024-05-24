@@ -35,7 +35,7 @@ public class SecurityConfig {
     private final UserAccountRepository userAccountRepository;
     private final CustomBCryptPasswordEncoder encoder;
     private final RestAuthenticationEntryPoint restAuthenticationEntryPoint;
-
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -44,7 +44,7 @@ public class SecurityConfig {
             if (user.isEmpty()) {
                 throw new UsernameNotFoundException(username);
             }
-            CustomUserDetails customUserDetails = new CustomUserDetails(user.get().getId(), user.get().getUsername(), user.get().getPassword(), user.get().getSalt());
+            CustomUserDetails customUserDetails = new CustomUserDetails(user.get().getId(), user.get().getUsername(), user.get().getPassword(), user.get().getSalt(), user.get().getUserAuthority().getName(), user.get().isLocked());
             SecurityContext context = SecurityContextHolder.getContext();
             Authentication authentication = new UsernamePasswordAuthenticationToken(customUserDetails, customUserDetails.getPassword());
             context.setAuthentication(authentication);
@@ -65,14 +65,24 @@ public class SecurityConfig {
         http
                 .httpBasic(Customizer.withDefaults())
                 .exceptionHandling()
+                .accessDeniedHandler(customAccessDeniedHandler)
                 .authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
                 .csrf(AbstractHttpConfigurer::disable) // For Postman
                 .headers(headers -> headers.frameOptions().disable()) // For the H2 console
                 .authorizeHttpRequests(auth -> auth  // manage access
                                 .requestMatchers(HttpMethod.POST, "/api/auth/user").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/auth/user/").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/actuator/shutdown").permitAll()
                                 .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
+                                .requestMatchers(HttpMethod.DELETE, "/api/auth/user/**").hasRole(Role.ADMINISTRATOR.name())
+                                .requestMatchers(HttpMethod.GET, "/api/auth/list").hasAnyRole(Role.ADMINISTRATOR.name(), Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.POST, "/api/antifraud/transaction").hasRole(Role.MERCHANT.name())
+                                .requestMatchers(HttpMethod.POST, "/api/antifraud/transaction/").hasRole(Role.MERCHANT.name())
+                                .requestMatchers(HttpMethod.PUT, "/api/auth/access").hasRole(Role.ADMINISTRATOR.name())
+                                .requestMatchers(HttpMethod.PUT, "/api/auth/access/").hasRole(Role.ADMINISTRATOR.name())
+                                .requestMatchers(HttpMethod.PUT, "/api/auth/role").hasRole(Role.ADMINISTRATOR.name())
+                                .requestMatchers(HttpMethod.PUT, "/api/auth/role/").hasRole(Role.ADMINISTRATOR.name())
                                 .anyRequest().authenticated()
                         // other matchers
                 )

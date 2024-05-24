@@ -1,4 +1,4 @@
-package antifraud.api.dto;
+package antifraud.api.transaction.dto;
 
 import lombok.Builder;
 import lombok.Getter;

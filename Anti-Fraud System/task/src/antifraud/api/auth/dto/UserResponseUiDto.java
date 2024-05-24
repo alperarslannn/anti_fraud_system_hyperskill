@@ -1,6 +1,6 @@
 package antifraud.api.auth.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import antifraud.api.auth.security.Role;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -10,4 +10,5 @@ public class UserResponseUiDto {
     private Long id;
     private String name;
     private String username;
+    private Role role;
 }
