@@ -89,6 +89,10 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST, "/api/antifraud/stolencard").hasRole(Role.SUPPORT.name())
                                 .requestMatchers(HttpMethod.DELETE, "/api/antifraud/stolencard/**").hasRole(Role.SUPPORT.name())
                                 .requestMatchers(HttpMethod.GET, "/api/antifraud/stolencard").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.GET, "/api/antifraud/history").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.GET, "/api/antifraud/history/**").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.PUT, "/api/antifraud/transaction").hasRole(Role.SUPPORT.name())
+                                .requestMatchers(HttpMethod.PUT, "/api/antifraud/transaction/").hasRole(Role.SUPPORT.name())
                                 .anyRequest().authenticated()
                         // other matchers
                 )

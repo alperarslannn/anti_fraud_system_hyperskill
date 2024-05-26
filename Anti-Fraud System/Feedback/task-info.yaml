@@ -12,6 +12,133 @@ files:
   - name: test/AntiFraudTest.java
     visible: false
     learner_created: false
+  - name: src/antifraud/api/auth/security/SecurityConfig.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/SuspiciousIpUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/TransactionRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/StatusUserUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/validator/CheckSum.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/NewRoleUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/AuthUiController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/Transaction.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/bootstrap/DataLoader.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/UserResponseUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/UserAccountRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/SuspiciousIpRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/StolenCardResponseUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/exception/GlobalExceptionHandler.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/UserAuthorityRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/UserUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/UserAccount.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/StolenCardRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/TransactionUiController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/validator/IPValidator.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/StolenCardUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/CustomAccessDeniedHandler.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/validator/CheckSumValidator.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/SuspiciousIpResponseUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/UserAuthority.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/validator/ValidIP.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/SuspiciousIp.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/StolenCard.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/CustomBCryptPasswordEncoder.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/Role.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/CustomUserDetails.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/StatusUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/ResultUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/security/RestAuthenticationEntryPoint.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/TransactionUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/auth/dto/LockUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/FeedbackUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/api/transaction/dto/TransactionResponseUiDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/TransactionAllowance.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/constant/TransactionAllowanceConstants.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/domain/repository/TransactionAllowanceRepository.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/18072#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sun, 26 May 2024 14:58:07 UTC"
 record: -1

@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -38,6 +39,10 @@ public class Transaction {
     private Region region;
     @Column
     private LocalDateTime date;
+    @Column
+    private ValidityType result;
+    @Column(nullable = false)
+    private String feedback;
 
     public enum Region {
         EAP("East Asia and Pacific"),
@@ -59,4 +64,14 @@ public class Transaction {
         }
     }
 
+    public enum ValidityType {
+        ALLOWED, MANUAL_PROCESSING, PROHIBITED
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (feedback == null) {
+            feedback = "";
+        }
+    }
 }

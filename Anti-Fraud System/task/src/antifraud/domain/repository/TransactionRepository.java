@@ -18,4 +18,7 @@ public interface TransactionRepository extends CrudRepository<Transaction, Long>
     @Query("SELECT t FROM Transaction t WHERE t.date >= :date and t.date < :givenDate")
     List<Transaction> listOfTransactionsInLastHour(@Param("date") LocalDateTime date, @Param("givenDate") LocalDateTime givenDate);
 
+    List<Transaction> findAllByOrderByIdAsc();
+
+    List<Transaction> findAllByNumber(String number);
 }
